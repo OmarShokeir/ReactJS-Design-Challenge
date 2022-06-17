@@ -14,12 +14,40 @@ class Card extends React.Component {
   }
 }
 
+class DayCard extends React.Component {
+  render() {
+    return (
+      <div className="day-card-design-inactive">
+        <p className="day-card-text">{this.props.day}</p>
+        <br></br>
+        <p className="day-card-text">{this.props.number}</p>
+      </div>
+    );
+  }
+}
+
 class Table extends React.Component {
   renderCard() {
     return <Card />;
   }
+  renderDayCard(day, number) {
+    return <DayCard day={day} number={number} />;
+  }
   render() {
-    return <div id="table"></div>;
+    return (
+      <div class="container" id="table-wrapper">
+        <div class="row table-header">
+          <div class="col-sm"></div>
+          <div class="col-sm ">{this.renderDayCard("Sun", 10)}</div>
+          <div class="col-sm">{this.renderDayCard("Mon", 11)}</div>
+          <div class="col-sm">{this.renderDayCard("Tue", 12)}</div>
+          <div class="col-sm">{this.renderDayCard("Wed", 13)}</div>
+          <div class="col-sm">{this.renderDayCard("Thu", 14)}</div>
+          <div class="col-sm">{this.renderDayCard("Fri", 15)}</div>
+          <div class="col-sm">{this.renderDayCard("Sat", 16)}</div>
+        </div>
+      </div>
+    );
   }
 }
 
