@@ -1,5 +1,5 @@
 body {
-  margin: 0px 2%;
+  margin: 20px 2% 0 2%;
 }
 #navbar-right-items {
   position: relative;
@@ -74,13 +74,16 @@ body {
   border-bottom-right-radius: 5px;
 }
 #table-wrapper {
-  margin: 30px 0;
   background-color: #fdfdfd;
-  width: 100%;
+  width: 96%;
   height: 100vh;
   border-radius: 20px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  overflow: hidden;
+  display: inline-block;
+}
+#content-wrapper {
+  margin: 30px 0;
+  display: flex;
 }
 .container {
   max-width: 100%;
@@ -97,8 +100,10 @@ body {
   width: 50px;
   color: white;
   font-weight: 500;
+  border: 0px;
 }
 .day-card-design-inactive {
+  border: 0px;
   background-color: transparent;
   text-align: center;
   width: fit-content;
@@ -114,4 +119,19 @@ body {
 }
 .row {
   padding: 10px 0;
+}
+.sidebar-off {
+  width: 4%;
+  height: 100vh;
+  display: inline-block;
+  text-align: center;
+}
+.sidebar-on {
+  width: 30%;
+  text-align: center;
+  margin-right: 10px;
+}
+.grip-icon {
+  display: inline;
+  font-size: 24px;
 }

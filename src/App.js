@@ -2,6 +2,8 @@ import "./styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import { FaRegCalendarMinus, FaAngleDown } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 
 class Card extends React.Component {
   render() {
@@ -17,11 +19,11 @@ class Card extends React.Component {
 class DayCard extends React.Component {
   render() {
     return (
-      <div className="day-card-design-inactive">
+      <button className="day-card-design-inactive">
         <p className="day-card-text">{this.props.day}</p>
         <br></br>
         <p className="day-card-text">{this.props.number}</p>
-      </div>
+      </button>
     );
   }
 }
@@ -30,21 +32,32 @@ class Table extends React.Component {
   renderCard() {
     return <Card />;
   }
-  renderDayCard(day, number) {
-    return <DayCard day={day} number={number} />;
-  }
   render() {
     return (
-      <div class="container" id="table-wrapper">
-        <div class="row table-header">
-          <div class="col-sm"></div>
-          <div class="col-sm ">{this.renderDayCard("Sun", 10)}</div>
-          <div class="col-sm">{this.renderDayCard("Mon", 11)}</div>
-          <div class="col-sm">{this.renderDayCard("Tue", 12)}</div>
-          <div class="col-sm">{this.renderDayCard("Wed", 13)}</div>
-          <div class="col-sm">{this.renderDayCard("Thu", 14)}</div>
-          <div class="col-sm">{this.renderDayCard("Fri", 15)}</div>
-          <div class="col-sm">{this.renderDayCard("Sat", 16)}</div>
+      <div className="container" id="table-wrapper">
+        <div className="row table-header">
+          <div className="col-sm"></div>
+          <div className="col-sm ">
+            <DayCard id="1" day={"Sun"} number={10} />
+          </div>
+          <div className="col-sm">
+            <DayCard id="2" day={"Mon"} number={11} />
+          </div>
+          <div className="col-sm">
+            <DayCard id="3" day={"Tue"} number={12} />
+          </div>
+          <div className="col-sm">
+            <DayCard id="4" day={"Wed"} number={13} />
+          </div>
+          <div className="col-sm">
+            <DayCard id="5" day={"Thu"} number={14} />
+          </div>
+          <div className="col-sm">
+            <DayCard id="6" day={"Fri"} number={15} />
+          </div>
+          <div className="col-sm">
+            <DayCard id="7" day={"Sat"} number={16} />
+          </div>
         </div>
       </div>
     );
@@ -69,7 +82,12 @@ export default function App() {
           </div>
         </div>
       </nav>
-      <Table />
+      <div id="content-wrapper">
+        <div className="sidebar-on">
+          <GiHamburgerMenu className="grip-icon" />
+        </div>
+        <Table />
+      </div>
     </div>
   );
 }
